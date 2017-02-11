@@ -24,7 +24,7 @@
     delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     # Push the current branch to the remote "origin", and set it to track
     # the upstream branch
-    publish = "!git push -u origin $(git branch-name)"
+    publish = "!git push -u origin $(branch-name)"
 [help]
     autocorrect = 12
 [gc]
