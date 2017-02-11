@@ -1,0 +1,36 @@
+# This is Git's per-user configuration file.
+[user]
+    name = Christopher Budo
+    email = budocf@rose-hulman.edu
+[core]
+    editor = vim
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    whitespace = red reverse
+[alias]
+    # Show all of my configured aliases
+    aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+    tags = tag -l
+    touch = !touch
+    # Start a new local repository and perform initial commit
+    this = !git init && git add . && git commmit -m \"Initial commit.\"
+    co = checkout
+    undo-commit = reset --soft HEAD^
+[help]
+    autocorrect = 12
+[gc]
+    auto = 0
+    reflogExpire = never
+    reflogExpireUnreachable = never
+[merge]
+    tool = meld
+    guitool = meld
+[mergetool "meld"]
+    path = c:/Program Files (x86)/Meld/Meld.exe
+    cmd = \"C:/Program Files (x86)/Meld/Meld.exe\" --diff \"$BASE\" \"$LOCAL\" \"$REMOTE\" --output \"$MERGED\"
+[diftool "meld"]
+    path = c:/Program Files (x86)/Meld/Meld.exe
+    cmd = \"C:/Program Files (x86)/Meld/Meld.exe\" --diff \"$BASE\" \"$LOCAL\" \"$REMOTE\" --output \"$MERGED\"
