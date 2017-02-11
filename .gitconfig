@@ -19,7 +19,12 @@
     this = !git init && git add . && git commmit -m \"Initial commit.\"
     co = checkout
     undo-commit = reset --soft HEAD^
-    #fire = !git add . && git commit -m \"fire commit\" && git push origin `git branch | awk '/^\*/ { printf $2 }'`
+    fire = !git add . && git commit -m \"fire commit\" && $(publish)
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    # Push the current branch to the remote "origin", and set it to track
+    # the upstream branch
+    publish = "!git push -u origin $(git branch-name)"
 [help]
     autocorrect = 12
 [gc]
