@@ -16,7 +16,7 @@
     tags = tag -l
     touch = !touch
     # Start a new local repository and perform initial commit
-    this = !git init && git add . && git commmit -m \"Initial commit.\"
+    this = !git init && git add . && git commit -m \"Initial commit.\"
     co = checkout
     undo-commit = reset --soft HEAD^
     #fire = !git add . && git commit -m \"fire commit\" && git push origin `git branch | awk '/^\*/ { printf $2 }'`
