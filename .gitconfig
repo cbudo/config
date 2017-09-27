@@ -8,6 +8,8 @@
 [color "diff"]
     whitespace = red reverse
 [alias]
+    # use ALL the gits
+    git = !exec git
     # Show all of my configured aliases
     aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
     tags = tag -l
